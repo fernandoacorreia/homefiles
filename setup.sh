@@ -15,6 +15,12 @@ install_ansible() {
   fi
 }
 
+apply_playbook() {
+  echo "Applying Ansible playbook"
+  ansible-playbook -i inventory playbook.yml
+}
+
 echo "Setting up machine"
 install_ansible
+apply_playbook
 echo "Finished setting up machine"
