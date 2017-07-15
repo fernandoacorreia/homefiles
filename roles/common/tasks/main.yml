@@ -1,5 +1,27 @@
 ---
-- name: Install basic packages
+- name: Update cache if it's out of date
+  become: yes
   apt:
-    name: software-properties-common
+    update_cache: yes
+    cache_valid_time: 3600
 
+- name: Install basic packages
+  become: yes
+  apt: name={{item}} state=installed
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - git
+    - software-properties-common
+    - tree
+
+- name: Remove dependencies that are no longer required
+  become: yes
+  apt:
+    autoremove: yes
+
+- name: Remove useless packages from the cache
+  become: yes
+  apt:
+    autoclean: yes
