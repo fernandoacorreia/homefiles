@@ -1,6 +1,10 @@
 ---
+- name: Get the username running Ansible
+  local_action: command whoami
+  register: username_on_the_host
+
 - name: Install Docker
-  script: install-docker
+  script: install-docker {{ username_on_the_host.stdout }}
   become: yes
   args:
     creates: /usr/bin/docker

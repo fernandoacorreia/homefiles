@@ -4,6 +4,9 @@
 #
 set -o nounset -o errexit -o pipefail
 
+# The name of the user to be added to the docker group must be passed as an argument.
+USER_TO_ADD=$1
+
 # Load OS release file for Linux Mint support.
 if [ -f "/etc/os-release" ]; then
   source "/etc/os-release"
@@ -23,7 +26,7 @@ apt-get update
 apt-get install -y docker-ce
 
 # Add user to docker group
-usermod -aG docker ${SUDO_USER}
+usermod -aG docker ${USER_TO_ADD}
 
 # Configure Docker to start on boot
 systemctl enable docker
