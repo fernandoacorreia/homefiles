@@ -4,4 +4,4 @@
   roles:
   - common
   - docker
-  # - neovim
+  - neovim
