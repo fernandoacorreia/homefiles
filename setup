@@ -11,22 +11,23 @@ missing_executable() {
 install_prerequisites() {
   if missing_executable sudo; then
     echo "Installing sudo"
-    apt update
-    apt install --yes sudo
+    apt-get update
+    apt-get install --yes sudo
   fi
   if missing_executable add-apt-repository; then
     echo "Installing add-apt-repository"
-    sudo apt update
-    sudo apt install --yes software-properties-common
+    sudo apt-get update
+    sudo apt-get install --yes software-properties-common
   fi
 }
 
 install_ansible() {
-  if missing_executable ansible; then
+  if missing_executable ansible-playbook; then
     echo "Installing Ansible"
-    sudo apt update
-    sudo apt-add-repository --yes ppa:ansible/ansible
-    sudo apt install --yes ansible
+    sudo apt-get update
+    sudo apt-get install --yes libffi-dev libssl-dev python-dev python-pip
+    sudo pip install --upgrade pip
+    pip install ansible
   fi
 }
 
