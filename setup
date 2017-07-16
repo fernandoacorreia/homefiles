@@ -27,7 +27,7 @@ install_ansible() {
     sudo apt-get update
     sudo apt-get install --yes libffi-dev libssl-dev python-dev python-pip
     sudo pip install --upgrade pip
-    pip install ansible
+    sudo pip install ansible
   fi
 }
 

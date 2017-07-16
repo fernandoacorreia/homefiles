@@ -2,6 +2,7 @@
 # See https://github.com/neovim/neovim/wiki/Installing-Neovim
 
 - name: Add Neovim repository
+  become: yes
   apt_repository:
     repo: 'ppa:neovim-ppa/unstable'
     state: present
@@ -22,6 +23,7 @@
     name: neovim
 
 - name: Set alternative to vi
+  become: yes
   alternatives:
     link: /usr/bin/vi
     name: vi
@@ -29,6 +31,7 @@
     priority: 60
 
 - name: Set alternative to vim
+  become: yes
   alternatives:
     link: /usr/bin/vim
     name: vim
@@ -36,6 +39,7 @@
     priority: 60
 
 - name: Set alternative to editor
+  become: yes
   alternatives:
     link: /usr/bin/editor
     name: editor
