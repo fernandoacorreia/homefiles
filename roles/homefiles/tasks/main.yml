@@ -14,3 +14,20 @@
     dest: "{{ home_dir }}/bin"
     state: link
 
+- name: Create link for ~/.profile
+  file:
+    src: "{{ homefiles_dir }}/profile.sh"
+    dest: "{{ home_dir }}/.profile"
+    state: link
+
+- name: Create link for ~/.bash_profile
+  file:
+    src: "{{ homefiles_dir }}/bash_profile.sh"
+    dest: "{{ home_dir }}/.bash_profile"
+    state: link
+
+- name: Create link for ~/.bashrc
+  file:
+    src: "{{ homefiles_dir }}/bashrc.sh"
+    dest: "{{ home_dir }}/.bashrc"
+    state: link
