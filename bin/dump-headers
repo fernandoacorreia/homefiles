@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Dumps request and response headers using tcpdump.
+#
+# Must be run with sudo.
+#
+set -o nounset -o errexit -o pipefail
+
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+
+function die() { echo >&2 "$@"; exit 1; }
+
+PORT=80
+
+tcpdump -i any -A -s 10240 "tcp port $PORT and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)" | egrep --line-buffered "^........(GET |HTTP\/|POST |HEAD )|^[A-Za-z0-9-]+: " | sed -r 's/^........(GET |HTTP\/|POST |HEAD )/\n\1/g'
+

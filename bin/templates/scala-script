@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# This is a Scala script.
+# Put required jar files in the lib subdirectory.
+#
+script_file=`readlink -f $0`
+script_directory=`dirname $script_file`
+script_lib="$script_directory/lib"
+lib_jars=`echo $script_lib/*.jar|sed 's/ /:/g'`
+script_classpath="$script_directory:$lib_jars"
+echo exec scala -savecompiled -classpath "$script_classpath" "$0" "$@"
+exec scala -savecompiled -classpath "$script_classpath" "$0" "$@"
+!#
+object HelloWorld {
+  def main(args: Array[String]) {
+    println("Hello, world! " + args.toList)
+  }
+}
+HelloWorld.main(args)
