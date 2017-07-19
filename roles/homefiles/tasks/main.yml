@@ -1,0 +1,16 @@
+---
+- name: Set homefiles directory
+  set_fact:
+    homefiles_dir: "{{ lookup('env','HOME') }}/homefiles"
+
+- name: Clone homefiles repository
+  git:
+    repo: git@github.com:fernandoacorreia/homefiles.git
+    dest: "{{ homefiles_dir }}"
+
+- name: Create link for ~/bin
+  file:
+    src: "{{ homefiles_dir }}/bin"
+    dest: "{{ home_dir }}/bin"
+    state: link
+

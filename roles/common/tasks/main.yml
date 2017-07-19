@@ -1,4 +1,8 @@
 ---
+- name: Set home directory
+  set_fact:
+    home_dir: "{{ lookup('env','HOME') }}"
+
 - name: Update cache if it's out of date
   become: yes
   apt:
