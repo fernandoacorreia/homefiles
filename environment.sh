@@ -17,3 +17,7 @@ export EDITOR="$VISUAL"
 
 # sbt
 export SBT_OPTS="-Xmx4g"
+
+# Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
