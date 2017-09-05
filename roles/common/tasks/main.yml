@@ -1,4 +1,8 @@
 ---
+- name: Get the username running Ansible
+  local_action: command whoami
+  register: username_on_the_host
+
 - name: Set home directory
   set_fact:
     home_dir: "{{ lookup('env','HOME') }}"
