@@ -142,6 +142,7 @@ shopt -s histappend
 alias gco='git checkout'
 alias gf='git fetch --tags'
 alias gd='git checkout develop'
+alias gg='git grep'
 alias gp='git pull'
 alias gpo='git push origin'
 
@@ -151,8 +152,8 @@ alias sdc='sbt domino/it:compile'
 alias snr='sbt nucleus/run'
 alias ser='sbt executor/run'
 alias sbt-debug="/usr/bin/sbt -mem 4000 -jvm-debug 9997"
-alias domino_nucleus="/usr/bin/sbt -mem 4000 -jvm-debug 9998 -shell 'project nucleus' compile shell"
-alias domino_executor="/usr/bin/sbt -mem 4000 -jvm-debug 9999 -shell 'project executor' compile shell"
+alias domino-nucleus="/usr/bin/sbt -mem 4000 -jvm-debug 9998 -shell 'project nucleus' compile shell"
+alias domino-executor="/usr/bin/sbt -mem 4000 -jvm-debug 9999 -shell 'project executor' compile shell"
 
 sshdom() {
   ssh -i $HOME/.ssh/domino-test.pem ubuntu@$1
