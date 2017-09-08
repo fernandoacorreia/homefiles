@@ -20,7 +20,6 @@
     - apt-transport-https
     - ca-certificates
     - curl
-    - git
     - less
     - software-properties-common
     - tree

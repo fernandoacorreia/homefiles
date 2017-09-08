@@ -3,6 +3,7 @@
 
   roles:
   - common
+  - git
   - docker
   - neovim
   - homefiles
