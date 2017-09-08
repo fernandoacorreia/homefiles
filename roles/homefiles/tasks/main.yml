@@ -5,8 +5,17 @@
 
 - name: Clone homefiles repository
   git:
-    repo: git@github.com:fernandoacorreia/homefiles.git
+    repo: https://github.com/fernandoacorreia/homefiles.git
     dest: "{{ homefiles_dir }}"
+
+- name: Get status for ~/bin
+  stat:
+    path: "{{ home_dir }}/bin"
+  register: home_bin
+
+- name: Preserve existing ~/bin
+  command: mv "{{ home_dir }}/bin" "{{ home_dir }}/bin.bak"
+  when: home_bin.stat.isdir is defined and home_bin.stat.isdir
 
 - name: Create link for ~/bin
   file:
@@ -14,11 +23,29 @@
     dest: "{{ home_dir }}/bin"
     state: link
 
+- name: Get status for ~/.profile
+  stat:
+    path: "{{ home_dir }}/.profile"
+  register: home_dot_profile
+
+- name: Preserve existing ~/.profile
+  command: mv "{{ home_dir }}/.profile" "{{ home_dir }}/.profile.bak"
+  when: home_dot_profile.stat.isreg is defined and home_dot_profile.stat.isreg
+
 - name: Create link for ~/.profile
   file:
     src: "{{ homefiles_dir }}/profile.sh"
     dest: "{{ home_dir }}/.profile"
     state: link
+
+- name: Get status for ~/.bash_profile
+  stat:
+    path: "{{ home_dir }}/.bash_profile"
+  register: home_dot_bash_profile
+
+- name: Preserve existing ~/.bash_profile
+  command: mv "{{ home_dir }}/.bash_profile" "{{ home_dir }}/.bash_profile.bak"
+  when: home_dot_bash_profile.stat.isreg is defined and home_dot_bash_profile.stat.isreg
 
 - name: Create link for ~/.bash_profile
   file:
@@ -26,11 +53,29 @@
     dest: "{{ home_dir }}/.bash_profile"
     state: link
 
+- name: Get status for ~/.bashrc
+  stat:
+    path: "{{ home_dir }}/.bashrc"
+  register: home_dot_bashrc
+
+- name: Preserve existing ~/.bashrc
+  command: mv "{{ home_dir }}/.bashrc" "{{ home_dir }}/.bashrc.bak"
+  when: home_dot_bashrc.stat.isreg is defined and home_dot_bashrc.stat.isreg
+
 - name: Create link for ~/.bashrc
   file:
     src: "{{ homefiles_dir }}/bashrc.sh"
     dest: "{{ home_dir }}/.bashrc"
     state: link
+
+- name: Get status for ~/.zshrc
+  stat:
+    path: "{{ home_dir }}/.zshrc"
+  register: home_dot_zshrc
+
+- name: Preserve existing ~/.zshrc
+  command: mv "{{ home_dir }}/.zshrc" "{{ home_dir }}/.zshrc.bak"
+  when: home_dot_zshrc.stat.isreg is defined and home_dot_zshrc.stat.isreg
 
 - name: Create link for ~/.zshrc
   file:
