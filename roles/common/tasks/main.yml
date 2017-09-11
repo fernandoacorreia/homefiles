@@ -20,6 +20,7 @@
     - apt-transport-https
     - ca-certificates
     - curl
+    - language-pack-en-base
     - less
     - software-properties-common
     - tree
