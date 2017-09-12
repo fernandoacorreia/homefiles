@@ -9,7 +9,7 @@ Automated scripts to set up my machines.
 ## Usage
 
 ```
-./setup
+~/homefiles/setup/run
 ```
 
 ## Testing
