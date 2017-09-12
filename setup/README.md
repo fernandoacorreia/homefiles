@@ -17,6 +17,6 @@ Automated scripts to set up my machines.
 To run in a disposable Docker container:
 
 ```
-docker run --rm -it -v $(pwd):/mnt/setup-my-machine ubuntu:16.04 bash
-/mnt/setup-my-machine/setup
+docker run --rm -it -v $(pwd):/root/homefiles ubuntu:16.04 bash
+/root/homefiles/setup/run
 ```
