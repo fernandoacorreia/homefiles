@@ -1,0 +1,45 @@
+#!/bin/bash
+set -o nounset -o errexit -o pipefail
+
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+
+missing_executable() {
+  local executable=$1
+  ! [ -x "$(command -v ${executable})" ]
+}
+
+install_prerequisites() {
+  if missing_executable sudo; then
+    echo "Installing sudo"
+    apt-get update
+    apt-get install --yes sudo
+  fi
+  if missing_executable add-apt-repository; then
+    echo "Installing add-apt-repository"
+    sudo apt-get update
+    sudo apt-get install --yes software-properties-common
+  fi
+}
+
+install_ansible() {
+  if missing_executable ansible-playbook; then
+    echo "Installing Ansible"
+    sudo apt-get update
+    sudo apt-get install --yes libffi-dev libssl-dev python-dev python-pip
+    sudo pip install --upgrade pip
+    sudo pip install ansible
+  fi
+}
+
+apply_playbook() {
+  echo "Applying Ansible playbook"
+  export ANSIBLE_NOCOWS=1
+  ansible-playbook -i inventory --ask-become-pass playbook.yml
+}
+
+echo "Setting up machine"
+cd "$SCRIPT_DIR"
+install_prerequisites
+install_ansible
+apply_playbook
+echo "Finished setting up machine"

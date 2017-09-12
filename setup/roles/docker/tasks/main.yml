@@ -1,0 +1,6 @@
+---
+- name: Install Docker
+  script: install-docker {{ username_on_the_host.stdout }}
+  become: yes
+  args:
+    creates: /usr/bin/docker

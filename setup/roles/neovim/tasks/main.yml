@@ -1,0 +1,47 @@
+---
+# See https://github.com/neovim/neovim/wiki/Installing-Neovim
+
+- name: Add Neovim repository
+  become: yes
+  apt_repository:
+    repo: 'ppa:neovim-ppa/unstable'
+    state: present
+    update_cache: yes
+
+- name: Install prerequisites for the Python modules
+  become: yes
+  apt: name={{item}} state=installed
+  with_items:
+    - python-dev
+    - python-pip
+    - python3-dev
+    - python3-pip
+
+- name: Install neovim
+  become: yes
+  apt:
+    name: neovim
+
+- name: Set alternative to vi
+  become: yes
+  alternatives:
+    link: /usr/bin/vi
+    name: vi
+    path: /usr/bin/nvim
+    priority: 60
+
+- name: Set alternative to vim
+  become: yes
+  alternatives:
+    link: /usr/bin/vim
+    name: vim
+    path: /usr/bin/nvim
+    priority: 60
+
+- name: Set alternative to editor
+  become: yes
+  alternatives:
+    link: /usr/bin/editor
+    name: editor
+    path: /usr/bin/nvim
+    priority: 60

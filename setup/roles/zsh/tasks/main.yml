@@ -1,0 +1,12 @@
+---
+- name: Install packages
+  become: yes
+  apt: name={{item}} state=installed
+  with_items:
+    - fonts-powerline
+    - git-core
+    - zsh
+
+- name: Change user's shell to zsh
+  shell: chsh {{ username_on_the_host.stdout }} --shell `which zsh`
+  become: yes
