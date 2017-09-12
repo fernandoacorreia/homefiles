@@ -10,9 +10,3 @@
 - name: Change user's shell to zsh
   shell: chsh {{ username_on_the_host.stdout }} --shell `which zsh`
   become: yes
-
-# Install oh-my-zsh, forcing it to think that the shell has already been changed to zsh, to avoid "Authentication failure" errors.
-- name: Install Oh-My-Zsh
-  shell: SHELL=/usr/bin/zsh sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  args:
-    creates: ~/.oh-my-zsh
