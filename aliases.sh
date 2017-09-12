@@ -1,6 +1,9 @@
 # Git
 alias gg='git grep'
 
+# Grep
+alias grep="grep --color=always"
+
 # Domino development
 alias c1='cd $HOME/projects/domino'
 alias sdc='sbt domino/it:compile'
