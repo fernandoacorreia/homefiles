@@ -7,6 +7,14 @@
   set_fact:
     home_dir: "{{ lookup('env','HOME') }}"
 
+- name: Create basic directories
+  file: path=$HOME/{{item}} state=directory
+  with_items:
+    - opt
+    - projects
+    - scratch
+    - secrets
+
 - name: Update cache if it's out of date
   become: yes
   apt:

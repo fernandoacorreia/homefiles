@@ -12,3 +12,9 @@
 - name: Install gitg
   become: yes
   apt: name=gitg
+
+- name: Install Helix Visual Client (P4V)
+  unarchive:
+    src: http://cdist2.perforce.com/perforce/r17.2/bin.linux26x86_64/p4v.tgz
+    dest: $HOME/opt/
+    remote_src: yes
