@@ -1,4 +1,4 @@
-# setup-my-machine
+# homefiles setup
 Automated scripts to set up my machines.
 
 ## Compatibility
