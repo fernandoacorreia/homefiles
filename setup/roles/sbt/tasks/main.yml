@@ -1,0 +1,6 @@
+---
+- name: Install sbt
+  script: install-sbt
+  become: yes
+  args:
+    creates: /usr/bin/sbt

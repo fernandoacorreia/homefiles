@@ -15,6 +15,9 @@ setpath PATH \
 export VISUAL=/usr/bin/nvim
 export EDITOR="$VISUAL"
 
+# Java
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+
 # sbt
 export SBT_OPTS="-Xmx4g"
 
