@@ -3,6 +3,11 @@
   set_fact:
     homefiles_dir: "{{ lookup('env','HOME') }}/homefiles"
 
+- name: Pull homefiles submodules
+  shell: cd $HOME/homefiles && git submodule init && git submodule update
+  args:
+    creates: $HOME/homefiles/vendor/antigen/antigen.zsh
+
 - name: Get status for ~/bin
   stat:
     path: "{{ home_dir }}/bin"
