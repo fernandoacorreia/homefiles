@@ -19,6 +19,11 @@ install_prerequisites() {
     sudo apt-get update
     sudo apt-get install --yes software-properties-common
   fi
+  if missing_executable easy_install; then
+    echo "Installing setuptools"
+    sudo apt-get update
+    sudo apt-get install --yes python-setuptools
+  fi
 }
 
 install_ansible() {
@@ -31,6 +36,17 @@ install_ansible() {
   fi
 }
 
+get_distrib_codename() {
+  # Default
+  DISTRIB_CODENAME=xenial
+  # Get distro codename
+  [ -f "/etc/lsb-release" ] && source /etc/lsb-release
+  # Get upstream distro codename (to get Ubuntu upstream distro instead of Linux Mint distro name)
+  [ -f "/etc/upstream-release/lsb-release" ] && source /etc/upstream-release/lsb-release
+
+  export DISTRIB_CODENAME
+}
+
 apply_playbook() {
   echo "Applying Ansible playbook"
   export ANSIBLE_NOCOWS=1
@@ -41,5 +57,6 @@ echo "Setting up machine"
 cd "$SCRIPT_DIR"
 install_prerequisites
 install_ansible
+get_distrib_codename
 apply_playbook
 echo "Finished setting up machine"

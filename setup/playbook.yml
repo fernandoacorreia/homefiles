@@ -1,6 +1,9 @@
 ---
 - hosts: all
 
+  vars:
+    distrib_codename: "{{ lookup('env', 'DISTRIB_CODENAME') }}"
+
   roles:
   - common
   - git

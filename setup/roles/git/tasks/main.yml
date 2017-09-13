@@ -3,6 +3,7 @@
   become: yes
   apt_repository:
     repo: 'ppa:git-core/ppa'
+    codename: '{{ distrib_codename }}'
 
 - name: Install git
   become: yes
