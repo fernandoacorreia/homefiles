@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# Launches IntelliJ IDEA
+#
+set -o nounset -o errexit -o pipefail
+
+~/opt/idea-IU-172.4155.36/bin/idea.sh
