@@ -16,5 +16,6 @@
 - name: Install Helix Visual Client (P4V)
   unarchive:
     src: http://cdist2.perforce.com/perforce/r17.2/bin.linux26x86_64/p4v.tgz
-    dest: $HOME/opt/
+    dest: "{{ home_dir }}/opt/"
+    creates: "{{ home_dir }}/opt/p4v-2017.2.1535556/bin/p4v"
     remote_src: yes

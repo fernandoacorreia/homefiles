@@ -8,7 +8,7 @@
     home_dir: "{{ lookup('env','HOME') }}"
 
 - name: Create basic directories
-  file: path=$HOME/{{item}} state=directory
+  file: path={{ home_dir }}/{{ item }} state=directory
   with_items:
     - opt
     - projects
