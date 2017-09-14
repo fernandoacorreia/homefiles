@@ -7,7 +7,7 @@ setpath() {
 
 setpath PATH \
   "$HOME/bin" \
-  "$HOME/opt/p4v-2017.1.1491634/bin" \
+  "$HOME/opt/p4v-2017.2.1535556/bin" \
   "/opt/terraform" \
   "$PATH" ;
 
