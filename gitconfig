@@ -1,0 +1,21 @@
+[color]
+	diff = true
+[credential]
+	helper = store
+[diff]
+	tool = p4merge
+[merge]
+	tool = p4merge
+[mergetool "p4merge"]
+	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+[difftool "p4merge"]
+	cmd = p4merge "$LOCAL" "$REMOTE"
+[mergetool]
+	keepBackup = false
+[push]
+	default = simple
+[user]
+	useConfigOnly = true

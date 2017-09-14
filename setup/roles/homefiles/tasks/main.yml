@@ -87,3 +87,18 @@
     src: "{{ homefiles_dir }}/zshrc.sh"
     dest: "{{ home_dir }}/.zshrc"
     state: link
+
+- name: Get status for ~/.gitconfig
+  stat:
+    path: "{{ home_dir }}/.gitconfig"
+  register: home_dot_gitconfig
+
+- name: Preserve existing ~/.gitconfig
+  command: mv "{{ home_dir }}/.gitconfig" "{{ home_dir }}/.gitconfig.bak"
+  when: home_dot_gitconfig.stat.isreg is defined and home_dot_gitconfig.stat.isreg
+
+- name: Create link for ~/.gitconfig
+  file:
+    src: "{{ homefiles_dir }}/gitconfig"
+    dest: "{{ home_dir }}/.gitconfig"
+    state: link
