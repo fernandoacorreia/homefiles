@@ -46,3 +46,9 @@
     name: editor
     path: /usr/bin/nvim
     priority: 60
+
+- name: Create link for ~/.config/nvim/
+  file:
+    src: "{{ homefiles_dir }}/nvim/"
+    dest: "{{ home_dir }}/.config/nvim"
+    state: link

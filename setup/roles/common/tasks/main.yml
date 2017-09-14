@@ -10,6 +10,7 @@
 - name: Create basic directories
   file: path={{ home_dir }}/{{ item }} state=directory
   with_items:
+    - .config
     - opt
     - projects
     - scratch
