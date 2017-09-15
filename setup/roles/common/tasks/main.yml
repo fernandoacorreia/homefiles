@@ -32,6 +32,7 @@
     - htop
     - language-pack-en-base
     - less
+    - silversearcher-ag
     - software-properties-common
     - tree
 
