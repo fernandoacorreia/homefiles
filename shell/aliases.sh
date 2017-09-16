@@ -19,4 +19,3 @@ sshdom() {
 
 # Kubernetes
 alias kc='kubectl'
-

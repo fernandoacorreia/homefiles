@@ -49,12 +49,12 @@ get_distrib_codename() {
 
 apply_playbook() {
   echo "Applying Ansible playbook"
+  cd "$SCRIPT_DIR/ansible"
   export ANSIBLE_NOCOWS=1
   ansible-playbook -i inventory --ask-become-pass playbook.yml
 }
 
 echo "Setting up machine"
-cd "$SCRIPT_DIR"
 install_prerequisites
 install_ansible
 get_distrib_codename

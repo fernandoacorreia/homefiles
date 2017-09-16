@@ -39,7 +39,7 @@
 
 - name: Create link for ~/.profile
   file:
-    src: "{{ homefiles_dir }}/profile.sh"
+    src: "{{ homefiles_dir }}/shell/profile.sh"
     dest: "{{ home_dir }}/.profile"
     state: link
 
@@ -54,7 +54,7 @@
 
 - name: Create link for ~/.bash_profile
   file:
-    src: "{{ homefiles_dir }}/bash_profile.sh"
+    src: "{{ homefiles_dir }}/shell/bash_profile.sh"
     dest: "{{ home_dir }}/.bash_profile"
     state: link
 
@@ -69,7 +69,7 @@
 
 - name: Create link for ~/.bashrc
   file:
-    src: "{{ homefiles_dir }}/bashrc.sh"
+    src: "{{ homefiles_dir }}/shell/bashrc.sh"
     dest: "{{ home_dir }}/.bashrc"
     state: link
 
@@ -84,7 +84,7 @@
 
 - name: Create link for ~/.zshrc
   file:
-    src: "{{ homefiles_dir }}/zshrc.sh"
+    src: "{{ homefiles_dir }}/shell/zshrc.sh"
     dest: "{{ home_dir }}/.zshrc"
     state: link
 
@@ -99,6 +99,6 @@
 
 - name: Create link for ~/.gitconfig
   file:
-    src: "{{ homefiles_dir }}/gitconfig"
+    src: "{{ homefiles_dir }}/git/gitconfig"
     dest: "{{ home_dir }}/.gitconfig"
     state: link
