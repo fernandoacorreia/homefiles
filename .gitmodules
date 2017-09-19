@@ -4,3 +4,9 @@
 [submodule "vendor/vim-plug"]
 	path = vendor/vim-plug
 	url = git@github.com:fernandoacorreia/vim-plug.git
+[submodule "vendor/fzf"]
+	path = vendor/fzf
+	url = git@github.com:fernandoacorreia/fzf.git
+[submodule "vendor/fzf.vim"]
+	path = vendor/fzf.vim
+	url = git@github.com:fernandoacorreia/fzf.vim.git

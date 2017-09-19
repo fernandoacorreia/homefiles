@@ -1,0 +1,5 @@
+---
+- name: Install fzf
+  command: ~/.fzf/install --all
+  args:
+    creates: "{{ home_dir }}/.fzf.zsh"

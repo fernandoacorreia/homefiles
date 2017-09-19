@@ -12,4 +12,5 @@
   - sbt
   - zsh
   - homefiles
+  - fzf
   - neovim

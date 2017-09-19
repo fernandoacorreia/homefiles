@@ -102,3 +102,18 @@
     src: "{{ homefiles_dir }}/git/gitconfig"
     dest: "{{ home_dir }}/.gitconfig"
     state: link
+
+- name: Get status for ~/.fzf
+  stat:
+    path: "{{ home_dir }}/.fzf"
+  register: home_dot_fzf
+
+- name: Preserve existing ~/.fzf
+  command: mv "{{ home_dir }}/.fzf" "{{ home_dir }}/.fzf.bak"
+  when: home_dot_fzf.stat.isdir is defined and home_dot_fzf.stat.isdir
+
+- name: Create link for ~/.fzf
+  file:
+    src: "{{ homefiles_dir }}/vendor/fzf"
+    dest: "{{ home_dir }}/.fzf"
+    state: link

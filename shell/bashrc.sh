@@ -145,3 +145,5 @@ alias gd='git checkout develop'
 alias gg='git grep'
 alias gp='git pull'
 alias gpo='git push origin'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

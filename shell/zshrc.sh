@@ -12,3 +12,5 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen theme agnoster
 antigen apply
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
