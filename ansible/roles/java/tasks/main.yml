@@ -3,9 +3,20 @@
   become: yes
   apt: name=default-jdk
 
+- stat: path="{{ home_dir }}/opt/idea-IU-172.4155.36/bin/idea.sh"
+  register: idea_sh_file
+
+# Work around https://github.com/ansible/ansible/issues/23864
+- name: Download IntelliJ IDEA
+  get_url:
+    url: https://download-cf.jetbrains.com/idea/ideaIU-2017.2.4-no-jdk.tar.gz
+    dest: /tmp/ideaIU-2017.2.4-no-jdk.tar.gz
+    checksum: sha1:3a4159c9074d740371da602c08500a173be982f7
+    timeout: 300
+  when: idea_sh_file.stat.exists == False
+
 - name: Install IntelliJ IDEA
   unarchive:
-    src: https://download-cf.jetbrains.com/idea/ideaIU-2017.2.4-no-jdk.tar.gz
+    src: /tmp/ideaIU-2017.2.4-no-jdk.tar.gz
     dest: "{{ home_dir }}/opt/"
-    remote_src: yes
     creates: "{{ home_dir }}/opt/idea-IU-172.4155.36/bin/idea.sh"
