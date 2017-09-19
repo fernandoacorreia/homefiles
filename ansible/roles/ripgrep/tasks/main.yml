@@ -1,0 +1,9 @@
+---
+- name: Install cargo (Rust package manager)
+  become: yes
+  apt: name=cargo state=installed
+
+- name: Install ripgrep
+  command: cargo install ripgrep
+  args:
+    creates: "{{ home_dir }}/.cargo/bin/rg"

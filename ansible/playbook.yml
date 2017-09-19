@@ -12,5 +12,6 @@
   - sbt
   - zsh
   - homefiles
+  - ripgrep
   - fzf
   - neovim
