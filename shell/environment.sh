@@ -24,3 +24,6 @@ export SBT_OPTS="-Xmx4g"
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# fzf
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
