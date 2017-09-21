@@ -26,4 +26,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # fzf
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
