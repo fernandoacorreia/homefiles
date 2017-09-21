@@ -28,9 +28,6 @@ set incsearch
 " Hightlight search.
 set hlsearch
 
-" Ctrl+L clears search hightlighting.
-nnoremap <C-L> :noh<CR><C-L>
-
 " Smart case-sensitive search.
 " With both ignorecase and smartcase turned on, a search is case-insensitive
 " if you enter the search string in ALL lower case.
@@ -39,16 +36,6 @@ set smartcase
 
 " Show (partial) command in the last line of the screen.
 set showcmd
-
-" CTRL-U in insert mode deletes a lot. Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-" http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
-inoremap <C-U> <C-G>u<C-U>
-inoremap <C-W> <C-G>u<C-W>
-
-" Remap <CR> for better undo
-" (https://github.com/tpope/vim-sensible/issues/28#issuecomment-12926100)
-inoremap <CR> <C-G>u<CR>
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -84,28 +71,6 @@ set nohidden " Avoid unsaved buffers.
 set autoread " Keep buffers up-to-date.
 set autowriteall " Automatically save buffers.
 au FocusLost * silent! wa " Save on lost focus.
-
-" Disable rarely-used keys.
-nnoremap <F1> <nop> " :help
-nnoremap Q <nop> " ex mode
-nnoremap K <nop> " man page
-
-" Tab mappings.
-map <leader>tt :tabnew<cr>
-map <leader>te :tabedit
-map <leader>tc :tabclose<cr>
-map <leader>to :tabonly<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprevious<cr>
-map <leader>tf :tabfirst<cr>
-map <leader>tl :tablast<cr>
-map <leader>tm :tabmove
-
-" Quickly traverse lists.
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
 
 " Show current mode.
 set showmode
