@@ -10,3 +10,6 @@
 [submodule "vendor/fzf.vim"]
 	path = vendor/fzf.vim
 	url = git@github.com:fernandoacorreia/fzf.vim.git
+[submodule "vendor/jellybeans.vim"]
+	path = vendor/jellybeans.vim
+	url = git@github.com:fernandoacorreia/jellybeans.vim.git
