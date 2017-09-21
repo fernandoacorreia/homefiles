@@ -49,10 +49,9 @@ autocmd BufReadPost *
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
-endif
+" Updated version from https://stackoverflow.com/a/6434485
+command! DiffOrig let g:diffline = line('.') | vert new | set bt=nofile | r # | 0d_ | diffthis
+  \ | :exe "norm! ".g:diffline."G" | wincmd p | diffthis | wincmd p
 
 " Provide context by keeping a scroll offset.
 set scrolloff=3

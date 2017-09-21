@@ -3,15 +3,16 @@
 let g:mapleader="\<Space>"
 let g:maplocalleader=';'
 
-" Release keymappings prefixes, evict entirely for use of plug-ins.
-nnoremap <Space>  <Nop>
-xnoremap <Space>  <Nop>
-nnoremap ,        <Nop>
-xnoremap ,        <Nop>
-nnoremap ;        <Nop>
-xnoremap ;        <Nop>
-nnoremap m        <Nop>
-xnoremap m        <Nop>
+" Disable rarely-used keys.
+nnoremap <F1> <nop> " :help
+nnoremap Q <nop> " ex mode
+nnoremap K <nop> " man page
+
+" fzf: list files
+nnoremap <silent> <Leader><Space> :Files<CR>
+
+" fzf: list buffers
+nnoremap <silent> <Leader>b :Buffers<CR>
 
 " Ctrl+L clears search hightlighting.
 nnoremap <C-L> :noh<CR><C-L>
@@ -25,11 +26,6 @@ inoremap <C-W> <C-G>u<C-W>
 " Remap <CR> for better undo
 " (https://github.com/tpope/vim-sensible/issues/28#issuecomment-12926100)
 inoremap <CR> <C-G>u<CR>
-
-" Disable rarely-used keys.
-nnoremap <F1> <nop> " :help
-nnoremap Q <nop> " ex mode
-nnoremap K <nop> " man page
 
 " Quickly traverse lists.
 nnoremap <silent> [b :bprevious<CR>
@@ -47,3 +43,7 @@ map <leader>tp :tabprevious<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
+
+" Shortcuts to open and close local diff.
+nnoremap <Leader>do :DiffOrig<cr>
+nnoremap <leader>dc :q<cr>:diffoff<cr>:exe "norm! ".g:diffline."G"<cr>
