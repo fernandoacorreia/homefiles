@@ -5,8 +5,6 @@
 
 - name: Pull homefiles submodules
   shell: cd $HOME/homefiles && git submodule init && git submodule update
-  args:
-    creates: "{{ home_dir }}/homefiles/vendor/antigen/antigen.zsh"
 
 - name: Create secrets README
   shell: echo "# Shell files exporting secrets as environment variables." > $HOME/secrets/README
