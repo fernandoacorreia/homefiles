@@ -30,6 +30,7 @@
     - ca-certificates
     - curl
     - htop
+    - jq
     - language-pack-en-base
     - less
     - silversearcher-ag
