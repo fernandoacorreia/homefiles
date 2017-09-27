@@ -1,7 +1,8 @@
 # Git
 alias gg='git grep'
 
-# Grep
+# Color in diff and grep
+alias diff="colordiff"
 alias grep="grep --color=always"
 
 # Domino development
