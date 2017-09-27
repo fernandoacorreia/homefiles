@@ -38,6 +38,12 @@
     - software-properties-common
     - tree
 
+- name: Install basic pip packages
+  become: yes
+  pip: name={{item}}
+  with_items:
+    - yolk3k
+
 - name: Remove dependencies that are no longer required
   become: yes
   apt:
