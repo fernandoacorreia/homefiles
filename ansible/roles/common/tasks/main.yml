@@ -28,6 +28,7 @@
   with_items:
     - apt-transport-https
     - ca-certificates
+    - colordiff
     - curl
     - htop
     - jq
