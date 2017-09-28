@@ -1,0 +1,19 @@
+---
+# Log file navigator http://lnav.org
+
+- name: Check if lnav is installed
+  command: dpkg-query -W lnav
+  register: lnav_check_deb
+  failed_when: lnav_check_deb.rc > 1
+  changed_when: lnav_check_deb.rc == 1
+
+- name: Download lnav
+  get_url:
+    url="https://github.com/tstack/lnav/releases/download/v0.8.2/lnav_0.8.2_amd64.deb"
+    dest="/tmp/lnav_0.8.2_amd64.deb"
+  when: lnav_check_deb.rc == 1
+
+- name: Install lnav
+  apt: deb="/tmp/lnav_0.8.2_amd64.deb"
+  become: yes
+  when: lnav_check_deb.rc == 1
