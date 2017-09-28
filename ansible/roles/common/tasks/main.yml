@@ -30,6 +30,7 @@
     - ca-certificates
     - colordiff
     - curl
+    - fonts-hack-ttf
     - htop
     - jq
     - language-pack-en-base
