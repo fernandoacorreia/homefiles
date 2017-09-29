@@ -7,5 +7,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug '~/homefiles/vendor/fzf'
 Plug '~/homefiles/vendor/fzf.vim'
 
+" vim-numbertoggle
+Plug '~/homefiles/vendor/vim-numbertoggle'
+
 " Initialize plugin system
 call plug#end()

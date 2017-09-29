@@ -8,7 +8,7 @@ set backspace=indent,eol,start
 syntax enable
 
 " Show line numbers.
-set number
+set number relativenumber
 
 " Show cursor position.
 set ruler

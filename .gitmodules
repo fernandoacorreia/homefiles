@@ -13,3 +13,6 @@
 [submodule "vendor/jellybeans.vim"]
 	path = vendor/jellybeans.vim
 	url = git@github.com:fernandoacorreia/jellybeans.vim.git
+[submodule "vendor/vim-numbertoggle"]
+	path = vendor/vim-numbertoggle
+	url = git@github.com:fernandoacorreia/vim-numbertoggle.git
