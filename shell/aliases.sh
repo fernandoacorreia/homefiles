@@ -20,3 +20,6 @@ sshdom() {
 
 # Kubernetes
 alias kc='kubectl'
+
+# Clipboard
+alias clipboard='xclip -sel clip'

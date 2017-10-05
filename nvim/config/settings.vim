@@ -112,3 +112,6 @@ call matchadd('ColorColumn', '\%81v', 100)
 
 " Treat .md files as markdown.
 au BufRead,BufNewFile *.md set filetype=markdown
+
+" Clipboard integration
+set clipboard=unnamedplus

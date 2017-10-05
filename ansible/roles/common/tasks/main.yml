@@ -38,6 +38,7 @@
     - silversearcher-ag
     - software-properties-common
     - tree
+    - xclip
 
 - name: Install basic pip packages
   become: yes
