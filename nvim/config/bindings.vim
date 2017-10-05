@@ -47,3 +47,6 @@ map <leader>tm :tabmove
 " Shortcuts to open and close local diff.
 nnoremap <Leader>do :DiffOrig<cr>
 nnoremap <leader>dc :q<cr>:diffoff<cr>:exe "norm! ".g:diffline."G"<cr>
+
+" Change line numbering
+nnoremap <expr> <C-N> CycleLNum()
