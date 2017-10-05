@@ -106,9 +106,9 @@ colorscheme jellybeans " https://github.com/fernandoacorreia/jellybeans.vim
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 
-" Highlight character width boundary.
-let &colorcolumn=join(range(101,999),",")
-highlight ColorColumn ctermbg=235 guibg=#23241F
+" Make the 81st column stand out
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
 
 " Treat .md files as markdown.
 au BufRead,BufNewFile *.md set filetype=markdown
