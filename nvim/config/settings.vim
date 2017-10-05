@@ -115,3 +115,12 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 " Clipboard integration
 set clipboard=unnamedplus
+
+" Highlight cursor line
+" Color names: http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
+hi CursorLine cterm=NONE ctermbg=235
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END<Paste>
