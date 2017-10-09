@@ -20,3 +20,11 @@
     src: /tmp/ideaIU-2017.2.4-no-jdk.tar.gz
     dest: "{{ home_dir }}/opt/"
     creates: "{{ home_dir }}/opt/idea-IU-172.4155.36/bin/idea.sh"
+
+# Configuration for inotify watches limit
+# https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
+- name: Copy sysctl configuration file
+  copy:
+    src: 90-intellij-idea.conf
+    dest: /etc/sysctl.d/90-intellij-idea.conf
+  become: yes
