@@ -106,9 +106,9 @@ colorscheme jellybeans " https://github.com/fernandoacorreia/jellybeans.vim
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 
-" Make the 81st column stand out
+" Display a visual indicator for lines that are too wide.
 highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+call matchadd('ColorColumn', '\%121v', 100)
 
 " Treat .md files as markdown.
 au BufRead,BufNewFile *.md set filetype=markdown
