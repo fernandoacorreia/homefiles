@@ -37,6 +37,7 @@
     - language-pack-en-base
     - less
     - pcregrep
+    - scala
     - silversearcher-ag
     - software-properties-common
     - tree
