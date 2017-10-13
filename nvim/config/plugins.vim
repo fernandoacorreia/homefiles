@@ -10,5 +10,8 @@ Plug '~/homefiles/vendor/fzf.vim'
 " vim-numbertoggle
 Plug '~/homefiles/vendor/vim-numbertoggle'
 
+" .editorconfig support.
+Plug '~/homefiles/vendor/editorconfig-vim'
+
 " Initialize plugin system
 call plug#end()

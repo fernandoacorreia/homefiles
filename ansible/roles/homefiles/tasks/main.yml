@@ -86,6 +86,21 @@
     dest: "{{ home_dir }}/.zshrc"
     state: link
 
+- name: Get status for ~/.editorconfig
+  stat:
+    path: "{{ home_dir }}/.editorconfig"
+  register: home_dot_editorconfig
+
+- name: Preserve existing ~/.editorconfig
+  command: mv "{{ home_dir }}/.editorconfig" "{{ home_dir }}/.editorconfig.bak"
+  when: home_dot_editorconfig.stat.isreg is defined and home_dot_editorconfig.stat.isreg
+
+- name: Create link for ~/.editorconfig
+  file:
+    src: "{{ homefiles_dir }}/.editorconfig"
+    dest: "{{ home_dir }}/.editorconfig"
+    state: link
+
 - name: Get status for ~/.gitconfig
   stat:
     path: "{{ home_dir }}/.gitconfig"
