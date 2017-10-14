@@ -108,7 +108,7 @@ match ExtraWhitespace /\s\+\%#\@<!$/
 
 " Display a visual indicator for lines that are too wide.
 highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%121v', 100)
+let g:EditorConfig_max_line_indicator = "exceeding"
 
 " Treat .md files as markdown.
 au BufRead,BufNewFile *.md set filetype=markdown
