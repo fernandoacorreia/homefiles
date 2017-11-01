@@ -19,3 +19,6 @@
 [submodule "vendor/editorconfig-vim"]
 	path = vendor/editorconfig-vim
 	url = git@github.com:fernandoacorreia/editorconfig-vim.git
+[submodule "vendor/vim-auto-save"]
+	path = vendor/vim-auto-save
+	url = git@github.com:fernandoacorreia/vim-auto-save.git

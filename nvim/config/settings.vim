@@ -70,6 +70,8 @@ set nohidden " Avoid unsaved buffers.
 set autoread " Keep buffers up-to-date.
 set autowriteall " Automatically save buffers.
 au FocusLost * silent! wa " Save on lost focus.
+let g:auto_save = 1 " enable AutoSave on Vim startup (vim-auto-save plugin)
+let g:auto_save_silent = 1 " do not display the auto-save notification (vim-auto-save plugin)
 
 " Show current mode.
 set showmode

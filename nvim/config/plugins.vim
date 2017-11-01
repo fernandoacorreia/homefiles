@@ -13,5 +13,8 @@ Plug '~/homefiles/vendor/vim-numbertoggle'
 " .editorconfig support.
 Plug '~/homefiles/vendor/editorconfig-vim'
 
+" Auto-save on buffer changes.
+Plug '~/homefiles/vendor/vim-auto-save'
+
 " Initialize plugin system
 call plug#end()
