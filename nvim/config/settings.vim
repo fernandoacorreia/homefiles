@@ -109,7 +109,7 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 
 " Display a visual indicator for lines that are too wide.
-highlight ColorColumn ctermbg=magenta
+highlight ColorColumn ctermbg=238 " See http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
 let g:EditorConfig_max_line_indicator = "exceeding"
 
 " Treat .md files as markdown.
