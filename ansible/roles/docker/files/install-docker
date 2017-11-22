@@ -19,7 +19,7 @@ release=${UBUNTU_CODENAME:-$(lsb_release -cs)}
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 # Set up Docker's stable repository
-add-apt-repository "deb https://download.docker.com/linux/ubuntu ${release} stable"
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu ${release} stable"
 
 # Install package
 apt-get update
