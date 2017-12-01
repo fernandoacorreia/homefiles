@@ -4,4 +4,4 @@
 #
 set -o nounset -o errexit -o pipefail
 
-~/opt/idea-IU-172.4155.36/bin/idea.sh
+~/opt/idea-IU-173.3727.127/bin/idea.sh
