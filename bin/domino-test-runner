@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Runs Domino's test-runner.py
+#
+set -o nounset -o errexit -o pipefail
+
+declare -r script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+
+function die() { echo >&2 "$@"; exit 1; }
+
+export PS1="${PS1:-}"
+cd ~/projects/deployer-tests
+source venv/bin/activate
+source ~/secrets/domino-aws.sh
+source ~/secrets/circle-ci.sh
+python test-runner.py $@
