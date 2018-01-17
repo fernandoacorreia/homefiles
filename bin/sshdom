@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# SSH into a Domino Ubuntu instance.
+#
+set -o nounset -o errexit -o pipefail
+
+ssh -i $HOME/.ssh/domino-test.pem ubuntu@$1
