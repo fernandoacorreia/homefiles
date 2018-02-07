@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# SSH into a Domino trial instance.
+#
+set -o nounset -o errexit -o pipefail
+
+ssh -i $HOME/.ssh/domino-trial ubuntu@$1

@@ -4,4 +4,4 @@
 #
 set -o nounset -o errexit -o pipefail
 
-ssh -i $HOME/.ssh/domino-test.pem ubuntu@$1
+echo "Trying with ubuntu" && ssh -i $HOME/.ssh/domino-test.pem ubuntu@$1 || echo "Trying with centos" && ssh -i $HOME/.ssh/domino-test.pem centos@$1

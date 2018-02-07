@@ -1,7 +1,0 @@
-#!/bin/bash
-#
-# SSH into a Domino CentOS instance.
-#
-set -o nounset -o errexit -o pipefail
-
-ssh -i $HOME/.ssh/domino-test.pem centos@$1
