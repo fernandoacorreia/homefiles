@@ -27,3 +27,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+
+# less command options
+export LESS='--quit-if-one-screen --no-init --RAW-CONTROL-CHARS'
