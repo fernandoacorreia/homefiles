@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# Copies the local deployer code to a remote server.
+#
+set -o nounset -o errexit -o pipefail
+
+address=$1
+rsync -r -a -v -e "ssh -i ~/.ssh/domino-test.pem" ~/projects/domino/deployer/data/configuration ubuntu@$address:/srv/deployer
