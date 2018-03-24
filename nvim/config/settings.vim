@@ -90,8 +90,8 @@ set wildmenu
 set list listchars=tab:»·,trail:·
 
 " Ignore files.
-set wildignore+=**/node_modules/*,**/bower_components/*,**/dist/*
-set wildignore+=target/*,project/target/*
+set wildignore+=**/node_modules/*,**/bower_components/*,**/dist/* " JavaScript
+set wildignore+=target/*,project/target/* " Scala
 
 " Set color scheme.
 " http://bytefluent.com/vivify/
