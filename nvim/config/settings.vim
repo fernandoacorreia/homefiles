@@ -59,13 +59,18 @@ set backupext=.bak
 " Persistent undo.
 set undofile
 
-" Autosave.
+" Auto-save.
 set nohidden " Avoid unsaved buffers.
 set autoread " Keep buffers up-to-date.
 set autowriteall " Automatically save buffers.
 au FocusLost * silent! wa " Save on lost focus.
-let g:auto_save = 1 " enable AutoSave on Vim startup (vim-auto-save plugin)
-let g:auto_save_silent = 1 " do not display the auto-save notification (vim-auto-save plugin)
+
+" Auto-save: vim-auto-save plugin settings.
+let g:auto_save = 1 " enable AutoSave on Vim startup
+let g:auto_save_silent = 1 " do not display the auto-save notification
+let g:auto_save_write_all_buffers = 1  " write all open buffers
+let g:auto_save_events = ["CursorHold", "CursorHoldI", "TextChanged"] " Don't save immediately after exiting Insert mode, but save after being inactive.
+set updatetime=1000 " Save after being inactive for a short time to allow for exiting insert mode and pasting without trimming whitespace, while still minimizing the delay for saving.
 
 " Show current mode.
 set showmode
