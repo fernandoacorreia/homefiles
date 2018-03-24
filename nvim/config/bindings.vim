@@ -50,3 +50,8 @@ nnoremap <leader>dc :q<cr>:diffoff<cr>:exe "norm! ".g:diffline."G"<cr>
 
 " Change line numbering
 nnoremap <expr> <C-N> CycleLNum()
+
+" Quickfix window
+nnoremap <leader>q :copen<CR>
+nnoremap <silent> [q :cprevious<CR>
+nnoremap <silent> ]q :cnext<CR>
