@@ -125,3 +125,7 @@ augroup CursorLine
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
 augroup END
+
+" Command abbreviations
+cabbrev ag Ag!
+cabbrev gg GGrep!
