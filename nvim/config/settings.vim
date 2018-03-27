@@ -69,7 +69,7 @@ au FocusLost * silent! wa " Save on lost focus.
 let g:auto_save = 1 " enable AutoSave on Vim startup
 let g:auto_save_silent = 1 " do not display the auto-save notification
 let g:auto_save_write_all_buffers = 1  " write all open buffers
-let g:auto_save_events = ["CursorHold", "CursorHoldI", "TextChanged"] " Don't save immediately after exiting Insert mode, but save after being inactive.
+let g:auto_save_events = ["CursorHold", "TextChanged"] " Don't save immediately after exiting Insert mode, but save after being inactive.
 set updatetime=1000 " Save after being inactive for a short time to allow for exiting insert mode and pasting without trimming whitespace, while still minimizing the delay for saving.
 
 " Show current mode.
