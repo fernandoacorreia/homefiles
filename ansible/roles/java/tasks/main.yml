@@ -3,6 +3,10 @@
   become: yes
   apt: name=default-jdk
 
+- name: Install JDK sources
+  become: yes
+  apt: name=openjdk-8-source
+
 - stat: path="{{ home_dir }}/opt/idea-IU-173.3727.127/bin/idea.sh"
   register: idea_sh_file
 
