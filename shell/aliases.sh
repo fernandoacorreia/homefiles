@@ -19,3 +19,6 @@ alias kc='kubectl'
 
 # Clipboard
 alias clipboard='xclip -sel clip'
+
+# Override default git aliases
+alias gfa='git fetch --all --tags --prune'
