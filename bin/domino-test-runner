@@ -13,4 +13,4 @@ cd ~/projects/deployer-tests
 source venv/bin/activate
 source ~/secrets/domino-aws.sh
 source ~/secrets/circle-ci.sh
-python test-runner.py $@
+python src/test-runner.py $@
