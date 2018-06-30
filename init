@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# Downloads the homefiles repository on a fresh machine and runs setup.
+#
+set -o nounset -o errexit -o pipefail
+
+function die() { echo >&2 "$@"; exit 1; }
+
+# Install git
+if ! which git &>/dev/null
+then
+  echo "Installing git"
+  sudo apt-add-repository ppa:git-core/ppa
+  sudo apt-get update
+  sudo apt-get install git
+fi
+
+# Create ssh key
+if ! test -f $HOME/.ssh/id_rsa
+then
+  echo "Creating ssh key"
+  ssh-keygen -t rsa -b 4096
+  echo "New ssh key created:"
+  cat $HOME/.ssh/id_rsa.pub
+  echo "Add it to your GitHub account and run this script again."
+  echo "See https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"
+  exit 1
+fi
+
+# Add ssh key to ssh agent
+echo "Adding ssh key to ssh agent"
+eval "$(ssh-agent -s)"
+ssh-add $HOME/.ssh/id_rsa
+
+# Clone homefiles repository
+if ! test -d $HOME/homefiles
+then
+  REPO_URL="git@github.com:fernandoacorreia/homefiles.git"
+  echo "Cloning from $REPO_URL"
+  cd $HOME
+  git clone $REPO_URL
+fi
+
+# Run setup
+echo "Running setup"
+cd $HOME/homefiles
+./setup

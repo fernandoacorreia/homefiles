@@ -8,6 +8,13 @@ Files from my home directory that I'm likely to reuse across machines.
 
 ## Usage
 
+### First time setup on a fresh machine
+
+* Download https://raw.githubusercontent.com/fernandoacorreia/homefiles/master/init
+* run `./init`
+
+### Update after pulling a new version or making changes
+
 ```
 ~/homefiles/setup
 ```
