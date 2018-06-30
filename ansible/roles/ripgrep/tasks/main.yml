@@ -1,7 +1,7 @@
 ---
 - name: Install cargo (Rust package manager)
   become: yes
-  apt: name=cargo state=installed
+  apt: name=cargo state=present
 
 - name: Install ripgrep
   command: cargo install ripgrep
