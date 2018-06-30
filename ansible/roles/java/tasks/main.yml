@@ -7,23 +7,30 @@
   become: yes
   apt: name=openjdk-8-source
 
-- stat: path="{{ home_dir }}/opt/idea-IU-173.3727.127/bin/idea.sh"
+- stat: path="{{ home_dir }}/opt/idea/bin/idea.sh"
   register: idea_sh_file
+
+- stat: path="/tmp/idea.tar.gz"
+  register: idea_tar_file
 
 # Work around https://github.com/ansible/ansible/issues/23864
 - name: Download IntelliJ IDEA
   get_url:
-    url: https://download-cf.jetbrains.com/idea/ideaIU-2017.3-no-jdk.tar.gz
-    dest: /tmp/ideaIU-2017.3-no-jdk.tar.gz
-    checksum: sha256:9a1f7d10b20ac578ba6f20c76b4dd9689260f33eeda888c556d1bdbf4d843171
+    url: https://download.jetbrains.com/idea/ideaIU-2018.1.5-no-jdk.tar.gz
+    dest: /tmp/idea.tar.gz
+    checksum: sha256:9d32b365112bf76b4d34f3ca3c082663fdee49cc6b85aa3e816b1f27e6f6dc10
     timeout: 300
-  when: idea_sh_file.stat.exists == False
+  when: idea_sh_file.stat.exists == False and idea_tar_file.stat.exists == False
+
+- name: Creates idea directory
+  file: path="{{ home_dir }}/opt/idea" state=directory
 
 - name: Install IntelliJ IDEA
   unarchive:
-    src: /tmp/ideaIU-2017.3-no-jdk.tar.gz
-    dest: "{{ home_dir }}/opt/"
-    creates: "{{ home_dir }}/opt/idea-IU-173.3727.127/bin/idea.sh"
+    src: /tmp/idea.tar.gz
+    dest: "{{ home_dir }}/opt/idea"
+    extra_opts: [--strip-components=1]
+    creates: "{{ home_dir }}/opt/idea/bin/idea.sh"
 
 # Configuration for inotify watches limit
 # https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
