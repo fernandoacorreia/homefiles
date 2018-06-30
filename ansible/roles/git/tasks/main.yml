@@ -13,9 +13,13 @@
   become: yes
   apt: name=gitg
 
+- name: Create p4v directory
+  file: path="{{ home_dir }}/opt/p4v" state=directory
+
 - name: Install Helix Visual Client (P4V)
   unarchive:
-    src: http://cdist2.perforce.com/perforce/r17.2/bin.linux26x86_64/p4v.tgz
-    dest: "{{ home_dir }}/opt/"
-    creates: "{{ home_dir }}/opt/p4v-2017.2.1535556/bin/p4v"
+    src: http://www.perforce.com/downloads/perforce/r18.2/bin.linux26x86_64/p4v.tgz
+    dest: "{{ home_dir }}/opt/p4v"
+    extra_opts: [--strip-components=1]
+    creates: "{{ home_dir }}/opt/p4v/bin/p4v"
     remote_src: yes

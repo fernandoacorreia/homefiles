@@ -8,7 +8,7 @@ setpath() {
 setpath PATH \
   "$HOME/bin" \
   "$HOME/.cargo/bin" \
-  "$HOME/opt/p4v-2017.2.1535556/bin" \
+  "$HOME/opt/p4v/bin" \
   "$PATH" ;
 
 # Editor
