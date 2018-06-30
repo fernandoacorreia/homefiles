@@ -31,6 +31,7 @@
     - ca-certificates
     - colordiff
     - curl
+    - dconf-cli
     - fonts-hack-ttf
     - htop
     - jq
