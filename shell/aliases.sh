@@ -7,7 +7,7 @@ alias grep="grep --color=always"
 
 # Domino development
 alias c1='cd $HOME/projects/domino'
-alias sdc='sbt domino/it:compile'
+alias sdc='sbt domino/test:compile domino/it:compile'
 alias snr='sbt nucleus/run'
 alias ser='sbt executor/run'
 alias sbt-debug="/usr/bin/sbt -mem 4000 -jvm-debug 9997"
