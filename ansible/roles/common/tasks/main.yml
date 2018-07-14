@@ -27,7 +27,6 @@
   apt: name={{item}} state=present
   with_items:
     - apt-transport-https
-    - awscli
     - ca-certificates
     - colordiff
     - curl
@@ -49,6 +48,7 @@
   become: yes
   pip: name={{item}}
   with_items:
+    - awscli
     - yolk3k
 
 - name: Remove dependencies that are no longer required
