@@ -12,6 +12,7 @@
   with_items:
     - .config
     - opt
+    - opt/bin
     - projects
     - scratch
     - secrets

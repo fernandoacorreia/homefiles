@@ -7,6 +7,7 @@ setpath() {
 
 setpath PATH \
   "$HOME/bin" \
+  "$HOME/opt/bin" \
   "$HOME/.cargo/bin" \
   "$HOME/opt/p4v/bin" \
   "$PATH" ;
