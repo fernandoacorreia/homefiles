@@ -37,6 +37,8 @@
     - jq
     - keepass2
     - language-pack-en-base
+    - libncurses5-dev
+    - libncursesw5-dev
     - less
     - pcregrep
     - scala
