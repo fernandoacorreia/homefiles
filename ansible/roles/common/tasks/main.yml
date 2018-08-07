@@ -40,6 +40,7 @@
     - libncurses5-dev
     - libncursesw5-dev
     - less
+    - pavucontrol
     - pcregrep
     - scala
     - silversearcher-ag
