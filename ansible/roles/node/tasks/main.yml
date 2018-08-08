@@ -1,0 +1,6 @@
+---
+- name: Install node and npm
+  shell: curl -L https://git.io/n-install | bash -s -- -y {{ node_version }}
+  args:
+    creates: "{{ home_dir }}/n/bin/node"
+    warn: False
