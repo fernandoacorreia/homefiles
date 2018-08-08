@@ -28,6 +28,7 @@
   apt: name={{item}} state=present
   with_items:
     - apt-transport-https
+    - build-essential
     - ca-certificates
     - colordiff
     - curl
@@ -37,16 +38,22 @@
     - jq
     - keepass2
     - language-pack-en-base
+    - less
+    - libbz2-dev
     - libncurses5-dev
     - libncursesw5-dev
-    - less
+    - libreadline-dev
+    - libsqlite3-dev
+    - libssl-dev
     - pavucontrol
     - pcregrep
     - scala
     - silversearcher-ag
     - software-properties-common
+    - tk-dev
     - tree
     - xclip
+    - zlib1g-dev
 
 - name: Install basic pip packages
   become: yes

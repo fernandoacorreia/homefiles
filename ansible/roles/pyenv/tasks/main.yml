@@ -1,0 +1,6 @@
+---
+- name: "Install pyenv"
+  shell: curl -L https://github.com/fernandoacorreia/pyenv-installer/raw/master/bin/pyenv-installer | bash
+  args:
+    creates: "{{ home_dir }}/.pyenv"
+    warn: False
