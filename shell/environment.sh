@@ -37,3 +37,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Python
+export PYTHON3_6="$HOME/.pyenv/versions/3.6.6/bin/python"

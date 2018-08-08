@@ -4,3 +4,8 @@
   args:
     creates: "{{ home_dir }}/.pyenv"
     warn: False
+
+- name: "Install Python 3.6.x"
+  shell: "{{ home_dir }}/.pyenv/bin/pyenv install 3.6.6"
+  args:
+    creates: "{{ home_dir }}/.pyenv/versions/3.6.6/bin/python"
