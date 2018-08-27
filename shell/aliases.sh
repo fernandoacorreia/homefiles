@@ -7,6 +7,7 @@ alias grep="grep --color=always"
 
 # Domino development
 alias c1='cd $HOME/projects/domino'
+alias c2='cd $HOME/projects/model-metadata-registry'
 alias sdc='sbt domino/test:compile domino/it:compile'
 alias snr='sbt nucleus/run'
 alias ser='sbt executor/run'
