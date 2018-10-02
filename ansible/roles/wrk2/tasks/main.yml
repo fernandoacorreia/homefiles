@@ -1,0 +1,14 @@
+# wrk2
+# https://github.com/giltene/wrk2
+# Forked at https://github.com/fernandoacorreia/wrk2
+# Binary will be installed in ~/opt/bin/wrk
+---
+- stat: path="{{ home_dir }}/opt/bin/wrk"
+  register: wrk_file
+
+- name: Install wrk
+  shell: |
+    cd {{ homefiles_dir }}/vendor/wrk2 && \
+    make && \
+    cp wrk {{ home_dir }}/opt/bin/wrk
+  when: wrk_file.stat.exists == False

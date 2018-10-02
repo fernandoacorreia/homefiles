@@ -22,3 +22,6 @@
 [submodule "vendor/vim-auto-save"]
 	path = vendor/vim-auto-save
 	url = git@github.com:fernandoacorreia/vim-auto-save.git
+[submodule "vendor/wrk2"]
+	path = vendor/wrk2
+	url = git@github.com:fernandoacorreia/wrk2.git
