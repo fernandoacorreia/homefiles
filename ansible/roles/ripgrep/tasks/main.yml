@@ -1,9 +1,11 @@
 ---
-- name: Install cargo (Rust package manager)
-  become: yes
-  apt: name=cargo state=present
+- name: Install rust and cargo
+  shell: curl https://sh.rustup.rs -sSf | sh -s -- -y
+  args:
+    creates: "{{ home_dir }}/.cargo/bin/cargo"
+    warn: False
 
 - name: Install ripgrep
-  command: cargo install ripgrep
+  command: "{{ home_dir }}/.cargo/bin/cargo install ripgrep"
   args:
     creates: "{{ home_dir }}/.cargo/bin/rg"
