@@ -3,8 +3,8 @@ Files from my home directory that I'm likely to reuse across machines.
 
 ## Compatibility
 
-* Linux Mint 18.2
-* Ubuntu 16.04
+* Linux Mint 19
+* Ubuntu 18.04
 
 ## Usage
 
