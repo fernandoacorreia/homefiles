@@ -36,7 +36,7 @@
     - fonts-hack-ttf
     - htop
     - jq
-    - keepass2
+    - keepassxc
     - language-pack-en-base
     - less
     - libbz2-dev
