@@ -40,3 +40,6 @@ eval "$(pyenv virtualenv-init -)"
 
 # Python
 export PYTHON3_6="$HOME/.pyenv/versions/3.6.6/bin/python"
+
+# Make Caps Lock work as Escape - https://askubuntu.com/a/830343
+setxkbmap -option caps:escape

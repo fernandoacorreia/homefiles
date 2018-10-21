@@ -1,4 +1,0 @@
-! Map Caps Lock to Control -- https://unix.stackexchange.com/a/114036/56711
-remove Lock = Caps_Lock
-keysym Caps_Lock = Control_L
-add Control = Control_L

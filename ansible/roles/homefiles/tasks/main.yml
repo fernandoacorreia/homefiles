@@ -130,18 +130,3 @@
     src: "{{ homefiles_dir }}/vendor/fzf"
     dest: "{{ home_dir }}/.fzf"
     state: link
-
-- name: Get status for ~/.Xmodmap
-  stat:
-    path: "{{ home_dir }}/.Xmodmap"
-  register: home_dot_Xmodmap
-
-- name: Preserve existing ~/.Xmodmap
-  command: mv "{{ home_dir }}/.Xmodmap" "{{ home_dir }}/.Xmodmap.bak"
-  when: home_dot_Xmodmap.stat.isreg is defined and home_dot_Xmodmap.stat.isreg
-
-- name: Create link for ~/.Xmodmap
-  file:
-    src: "{{ homefiles_dir }}/X/Xmodmap"
-    dest: "{{ home_dir }}/.Xmodmap"
-    state: link
