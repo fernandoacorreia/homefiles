@@ -1,16 +1,16 @@
 ---
+- name: Add Google Chrome apt signing key
+  become: yes
+  apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    state: present
+
 - name: Add Google Chrome repository
   become: yes
   apt_repository:
     repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
     state: present
     filename: google-chrome
-
-- name: Add Google Chrome apt signing key
-  become: yes
-  apt_key:
-    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
-    state: present
 
 - name: Install Google Chrome
   become: yes
