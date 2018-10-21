@@ -13,7 +13,10 @@ Files from my home directory that I'm likely to reuse across machines.
 * Download https://raw.githubusercontent.com/fernandoacorreia/homefiles/master/init
 * run `bash ./init`
 
-Restart or log off for user profile changes to take full effect.
+### Post-setup
+
+* Restart or log off for user profile changes to take full effect.
+* Set Chrome as the default browser.
 
 ### Update after pulling a new version or making changes
 
