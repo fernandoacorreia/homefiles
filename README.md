@@ -18,6 +18,10 @@ Files from my home directory that I'm likely to reuse across machines.
 * Restart or log off for user profile changes to take full effect.
 * Set Chrome as the default browser.
 * Ignore (revert) redundant PATH settings for cargo and n that were added during setup.
+* Set Hack Regular as default monospace font.
+* Disable transparency in terminal.
+* Assign Ctrl+Space keybinding as a shortcut for maximize window.
+* Assign Alt-1 to Alt-4 keybindings as direct navigation shortcuts for workspaces.
 
 ### Update after pulling a new version or making changes
 
