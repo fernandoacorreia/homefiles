@@ -22,6 +22,7 @@ Files from my home directory that I'm likely to reuse across machines.
 * Disable transparency in terminal.
 * Assign Ctrl+Space keybinding as a shortcut for maximize window.
 * Assign Alt-1 to Alt-4 keybindings as direct navigation shortcuts for workspaces.
+* Disable sounds: Starting, Leaving, Switching workspaces.
 
 ### Update after pulling a new version or making changes
 
