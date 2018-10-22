@@ -38,7 +38,7 @@ install_ansible() {
 
 get_distrib_codename() {
   # Default
-  DISTRIB_CODENAME=xenial
+  DISTRIB_CODENAME=bionic
   # Get distro codename
   [ -f "/etc/lsb-release" ] && source /etc/lsb-release
   # Get upstream distro codename (to get Ubuntu upstream distro instead of Linux Mint distro name)
