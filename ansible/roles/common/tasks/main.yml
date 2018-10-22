@@ -49,6 +49,7 @@
     - pcregrep
     - scala
     - silversearcher-ag
+    - snapd
     - software-properties-common
     - tk-dev
     - tree
