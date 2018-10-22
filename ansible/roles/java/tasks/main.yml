@@ -1,7 +1,7 @@
 ---
 - name: Install java
   become: yes
-  apt: name=default-jdk
+  apt: name=openjdk-8-jdk
 
 - name: Install JDK sources
   become: yes
