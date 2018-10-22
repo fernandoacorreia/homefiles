@@ -1,0 +1,35 @@
+---
+- name: Add first Virtualbox apt signing key
+  become: yes
+  apt_key:
+    url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+    state: present
+
+- name: Add second Virtualbox apt signing key
+  become: yes
+  apt_key:
+    url: https://www.virtualbox.org/download/oracle_vbox.asc
+    state: present
+
+- name: Add virtualbox repository
+  become: yes
+  apt_repository:
+    repo: "deb https://download.virtualbox.org/virtualbox/debian {{distrib_codename}} contrib"
+    state: present
+    filename: virtualbox
+  register: virtualbox_repo_result
+
+- name: apt-get update
+  apt: update_cache=yes cache_valid_time=0
+  become: yes
+  when: virtualbox_repo_result.changed
+
+- name: apt-get update
+  apt: update_cache=true cache_valid_time=3600
+  become: yes
+
+- name: Install virtualbox package
+  become: yes
+  apt:
+    name: virtualbox-5.2
+    state: present
