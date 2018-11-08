@@ -16,7 +16,7 @@ alias domino-nucleus="/usr/bin/sbt -mem 4000 -jvm-debug 9998 -shell 'project nuc
 alias domino-executor="/usr/bin/sbt -mem 4000 -jvm-debug 9999 -shell 'project executor' compile shell"
 
 # Kubernetes
-alias kc='kubectl'
+alias k='kubectl'
 
 # Clipboard
 alias clipboard='xclip -sel clip'
