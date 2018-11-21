@@ -1,3 +1,6 @@
+# User initials
+export INITIALS="fc"
+
 # Path
 setpath() {
   xIFS=$IFS; IFS=":"; var=$1;
