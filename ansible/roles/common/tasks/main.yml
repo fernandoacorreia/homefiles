@@ -47,7 +47,6 @@
     - libssl-dev
     - pavucontrol
     - pcregrep
-    - scala
     - silversearcher-ag
     - snapd
     - software-properties-common
