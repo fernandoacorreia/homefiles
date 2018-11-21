@@ -1,5 +1,7 @@
 # Git
 alias gg='git grep'
+alias gpu='git push -u origin HEAD'
+alias gpf='git push -f origin HEAD'
 
 # Color in diff and grep
 alias diff="colordiff"
