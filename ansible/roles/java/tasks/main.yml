@@ -16,9 +16,9 @@
 # Work around https://github.com/ansible/ansible/issues/23864
 - name: Download IntelliJ IDEA
   get_url:
-    url: https://download.jetbrains.com/idea/ideaIU-2018.1.5-no-jdk.tar.gz
+    url: https://download-cf.jetbrains.com/idea/ideaIU-2018.3.tar.gz
     dest: /tmp/idea.tar.gz
-    checksum: sha256:9d32b365112bf76b4d34f3ca3c082663fdee49cc6b85aa3e816b1f27e6f6dc10
+    checksum: sha256:bca38957db9191d8932d79feca899ce4bb4cc8d32d4534de054a6541ac89ab5d
     timeout: 300
   when: idea_sh_file.stat.exists == False and idea_tar_file.stat.exists == False
 
