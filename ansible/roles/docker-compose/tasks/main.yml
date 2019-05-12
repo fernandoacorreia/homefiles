@@ -1,0 +1,6 @@
+---
+- name: Install Docker Compose
+  script: install-docker-compose
+  become: yes
+  args:
+    creates: /usr/local/bin/docker-compose

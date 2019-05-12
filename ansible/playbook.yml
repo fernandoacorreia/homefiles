@@ -10,6 +10,7 @@
   - git
   - tig
   - docker
+  - docker-compose
   - java
   - sbt
   - zsh
